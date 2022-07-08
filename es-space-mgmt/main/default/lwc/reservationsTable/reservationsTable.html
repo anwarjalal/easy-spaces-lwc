@@ -1,0 +1,12 @@
+<template>
+        <lightning-card  title="High Priority Reservations">
+          <template for:each={reservations} for:item="record">
+                        <li class="slds-item" key={record.record.Id}>
+                            <c-reservation-til
+                                reservation={record}
+                                onreservationselect={handleSelectEvent}
+                            ></c-reservation-til>
+                        </li>
+                    </template>
+        </lightning-card>
+</template>

@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
+import getRelatedSpaces from '@salesforce/apex/MarketServices.getRelatedSpaces';
 import { NavigationMixin } from 'lightning/navigation';
 
 export default class RelatedSpaces extends NavigationMixin(LightningElement) {

@@ -1,0 +1,23 @@
+:host {
+	--slds-c-card-color-background : white ;
+}
+.counter {
+	font-size:40px;
+}
+.counter span {
+	font-size:60px;
+	padding:2px;
+	color:#4EDA9A;
+}
+.infosection {
+	border-top: 1px solid #dee0df;
+	padding-top: 15px;
+}
+.infosection p {
+	font-size:16px;
+}
+.infosection p span {
+	font-size:20px;
+	padding:4px;
+	color:#4EDA9A;
+}

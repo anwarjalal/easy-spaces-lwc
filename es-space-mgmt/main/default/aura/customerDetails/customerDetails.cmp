@@ -1,6 +1,6 @@
 <aura:component
     implements="lightning:availableForFlowScreens"
-    controller="marketServices"
+    controller="MarketServices"
     access="global"
 >
     <!--FLOW INPUT VARIABLES-->

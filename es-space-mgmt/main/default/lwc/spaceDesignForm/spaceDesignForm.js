@@ -1,5 +1,5 @@
 import { LightningElement, api, wire } from 'lwc';
-import getRelatedSpaces from '@salesforce/apex/marketServices.getRelatedSpaces';
+import getRelatedSpaces from '@salesforce/apex/MarketServices.getRelatedSpaces';
 import { FlowNavigationNextEvent } from 'lightning/flowSupport';
 
 export default class SpaceDesignForm extends LightningElement {

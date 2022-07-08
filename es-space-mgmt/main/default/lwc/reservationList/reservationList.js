@@ -1,6 +1,6 @@
 import { LightningElement, wire } from 'lwc';
 import { refreshApex } from '@salesforce/apex';
-import getOpenReservations from '@salesforce/apex/reservationManagerController.getOpenReservations';
+import getOpenReservations from '@salesforce/apex/ReservationManagerController.getOpenReservations';
 
 import TILE_SELECTION_MC from '@salesforce/messageChannel/Tile_Selection__c';
 import FLOW_STATUS_CHANGE_MC from '@salesforce/messageChannel/Flow_Status_Change__c';

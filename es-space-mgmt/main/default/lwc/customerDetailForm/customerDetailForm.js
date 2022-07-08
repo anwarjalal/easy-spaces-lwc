@@ -1,5 +1,5 @@
 import { LightningElement, api } from 'lwc';
-import getCustomerFields from '@salesforce/apex/customerServices.getCustomerFields';
+import getCustomerFields from '@salesforce/apex/CustomerServices.getCustomerFields';
 const STATE_FIELD_LABEL = 'State';
 
 export default class CustomerDetailForm extends LightningElement {
