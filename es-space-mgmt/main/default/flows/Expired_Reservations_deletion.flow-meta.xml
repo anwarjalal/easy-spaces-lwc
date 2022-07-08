@@ -2,8 +2,8 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>55.0</apiVersion>
     <environments>Default</environments>
-    <interviewLabel>DeleteExpiredReservations {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>DeleteExpiredReservations</label>
+    <interviewLabel>Expired Reservations deletion {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Expired Reservations deletion</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -24,8 +24,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordDeletes>
-        <name>deleteReservation</name>
-        <label>deleteReservation</label>
+        <name>deleteReservations</name>
+        <label>deleteReservations</label>
         <locationX>176</locationX>
         <locationY>335</locationY>
         <inputReference>$Record</inputReference>
@@ -34,19 +34,12 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>deleteReservation</targetReference>
+            <targetReference>deleteReservations</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>Remaining_days__c</field>
-            <operator>EqualTo</operator>
-            <value>
-                <numberValue>0.0</numberValue>
-            </value>
-        </filters>
+        <filterFormula>IF({!$Record.Remaining_days__c}=0,True ,False)</filterFormula>
         <object>Reservation__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Obsolete</status>
+    <status>Active</status>
 </Flow>

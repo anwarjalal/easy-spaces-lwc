@@ -16,6 +16,12 @@
                 onclick={openModalHandler}
                 class="slds-m-left_x-small">
                 </lightning-button>
+                <lightning-button variant="brand"
+                label="Edit"
+                title="Edit"
+                onclick={openModalFormHandler}
+                class="slds-m-left_x-small">
+                </lightning-button>
         </div>
         </template>
         <template if:true={reservation.record.Lead__c}>
@@ -28,6 +34,12 @@
                 label="Event"
                 title="Event"
                 onclick={openModalHandler}
+                class="slds-m-left_x-small">
+                </lightning-button>
+                <lightning-button variant="brand"
+                label="Edit"
+                title="Edit"
+                onclick={openModalFormHandler}
                 class="slds-m-left_x-small">
                 </lightning-button>
         </div>
@@ -43,7 +55,7 @@
         <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
             <lightning-record-edit-form object-api-name="Event2__c" onsubmit={cancelModal} >
                 <lightning-input-field field-name="Name" ></lightning-input-field>
-                <lightning-input-field field-name="Day__c" ></lightning-input-field>
+                <lightning-input-field field-name="Day__c" value={reservation.record.Start_Date__c} ></lightning-input-field>
                 <lightning-input-field field-name="Reservation__c" value={reservation.record.Id} ></lightning-input-field>
                 
                 <div class="slds-modal__footer">
@@ -56,4 +68,27 @@
         </div>
         </section>
 </template>
+
+
+ <template if:true={openModalForm}>
+    <section role="dialog" tabindex="-1" aria-modal="true" aria-labelledby="modal-heading-01" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+        <div class="slds-modal__header">
+        <h1 id="modal-heading-02" class="slds-modal__title slds-hyphenate">Edit Reservation</h1>
+        </div>
+        <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+           <lightning-record-form
+            record-id={reservation.record.Id}
+            object-api-name="Reservation__c"
+            layout-type="Full"
+            mode="view">
+            </lightning-record-form>
+            <div class="slds-modal__footer">
+                    <button class="slds-button slds-button_neutral" aria-label="save and close" onclick={cancelModalForm} >Cancel</button>                    </div>
+        </div>
+        
+        </div>
+        </section>
+</template>
+
 </template>

@@ -4,6 +4,7 @@ export default class ReservationTil extends NavigationMixin(LightningElement) {
     @api reservation;
     navRef;
     openModal = false ;
+    openModalForm = false ;
 
     get cssClass() {
         return this.reservation.muted ? 'mute pointer' : 'pointer';
@@ -37,8 +38,14 @@ export default class ReservationTil extends NavigationMixin(LightningElement) {
 openModalHandler() {
   this.openModal = true ;
 }
+openModalFormHandler() {
+  this.openModalForm = true ;
+}
 cancelModal() {
   this.openModal = false ;
+}
+cancelModalForm() {
+  this.openModalForm = false ;
 }
 
 }
